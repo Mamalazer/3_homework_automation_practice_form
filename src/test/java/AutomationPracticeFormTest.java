@@ -14,14 +14,14 @@ public class AutomationPracticeFormTest extends GeneralFrontTest {
         $("#firstName").setValue("Даниил");
         $("#lastName").setValue("Кузнецов");
         $("#userEmail").setValue("auto@test.ru");
-        $x("//*[@id='gender-radio-1']/parent::*").click();
+        $x("//*[text()='Male']/parent::*").click();
         $("#userNumber").setValue("89645178902");
         Helper.setDate("May", "1993", "14");
         $("#subjectsInput").setValue("Math").sendKeys(ENTER);
         $("#subjectsInput").setValue("Physics").sendKeys(ENTER);
         $("#subjectsInput").setValue("Computer science").sendKeys(ENTER);
-        $x("//*[@id='hobbies-checkbox-1']/parent::*").click();
-        $x("//*[@id='hobbies-checkbox-3']/parent::*").click();
+        $x("//*[text()='Sports']/parent::*").click();
+        $x("//*[text()='Music']/parent::*").click();
         $("#uploadPicture").uploadFile(new File("src/test/resources/Picture.jpg"));
         $("#currentAddress").setValue("Ленина 1-17");
         $("#react-select-3-input").setValue("NCR").sendKeys(ENTER);
