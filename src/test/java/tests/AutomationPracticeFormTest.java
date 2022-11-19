@@ -23,6 +23,7 @@ public class AutomationPracticeFormTest extends GeneralFrontTest {
                 .setState(daniil_kuznetsov.getState())
                 .setCity(daniil_kuznetsov.getCity())
                 .submitForm()
-                .checkSummaryForm(daniil_kuznetsov);
+                .checkSummaryForm(daniil_kuznetsov)
+                .closeSummaryForm();
     }
 }
