@@ -27,7 +27,7 @@ public class SummaryFormPage {
         $x("//td[text()='Mobile']/following-sibling::td")
                 .shouldHave(text(user.getMobileNumber()));
         $x("//td[text()='Date of Birth']/following-sibling::td")
-                .shouldHave(text(user.getBirthDay().format(DateTimeFormatter.ofPattern("dd MMM,yyyy", Locale.ENGLISH))));
+                .shouldHave(text(user.getBirthDay().format(DateTimeFormatter.ofPattern("dd MMMM,yyyy", Locale.ENGLISH))));
 
         for (Subject subject : user.getSubjects()) {
             $x("//td[text()='Subjects']/following-sibling::td")

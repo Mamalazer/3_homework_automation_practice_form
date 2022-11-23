@@ -6,7 +6,12 @@ import lombok.Getter;
 public enum Subject {
     MATH("Math"),
     PHYSICS("Physics"),
-    COMPUTER_SCIENCE("Computer science");
+    COMPUTER_SCIENCE("Computer science"),
+    ACCOUNTING("Accounting"),
+    ARTS("Arts"),
+    BIOLOGY("Biology"),
+    ECONOMICS("Economics"),
+    HISTORY("History");
 
     private final String value;
 

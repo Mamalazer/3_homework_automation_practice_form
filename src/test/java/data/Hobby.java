@@ -5,7 +5,8 @@ import lombok.Getter;
 @Getter
 public enum Hobby {
     SPORTS("Sports"),
-    MUSIC("Music");
+    MUSIC("Music"),
+    READING("Reading");
 
     private final String value;
 
