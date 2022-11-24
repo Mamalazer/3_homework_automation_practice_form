@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class StudentRegistrationFormPage {
@@ -37,7 +38,7 @@ public class StudentRegistrationFormPage {
     }
 
     public StudentRegistrationFormPage setGender(Gender gender) {
-        $x("//*[text()='" + gender.getValue() + "']/parent::*").click();
+        $("#genterWrapper").$(byText(gender.getValue())).click();
         return this;
     }
 
@@ -64,7 +65,7 @@ public class StudentRegistrationFormPage {
 
     public StudentRegistrationFormPage setHobbies(List<Hobby> hobbies) {
         for (Hobby hobby : hobbies) {
-            $x("//*[text()='" + hobby.getValue() + "']/parent::*").click();
+            $("#hobbiesWrapper").$(byText(hobby.getValue())).click();
         }
         return this;
     }
