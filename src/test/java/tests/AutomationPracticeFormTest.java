@@ -37,7 +37,7 @@ public class AutomationPracticeFormTest extends GeneralFrontTest {
                 .closeSummaryForm();
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "Проверка заполнения данных на форме для пользователя {0}")
     @MethodSource("argsProviderFactory")
     public void test_02(User user) {
         openRegistrationForm()
