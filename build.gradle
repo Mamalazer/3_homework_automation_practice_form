@@ -42,6 +42,7 @@ dependencies {
     testImplementation(
             "org.junit.jupiter:junit-jupiter:${junitVersion}",
             "com.codeborne:selenide:${selenideVersion}",
+            "com.codeborne:selenide-full-screenshot:${selenideVersion}",
             "com.github.javafaker:javafaker:1.0.2",
             "io.qameta.allure:allure-selenide:${allureVersion}"
     )

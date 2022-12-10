@@ -33,8 +33,7 @@ public class AutomationPracticeFormTest extends BaseTest {
                 .setState(daniil_kuznetsov.getState())
                 .setCity(daniil_kuznetsov.getCity())
                 .submitForm()
-                .checkSummaryForm(daniil_kuznetsov)
-                .closeSummaryForm();
+                .checkSummaryForm(daniil_kuznetsov);
     }
 
     @ParameterizedTest(name = "Проверка заполнения данных на форме для пользователя {0}")
@@ -54,7 +53,6 @@ public class AutomationPracticeFormTest extends BaseTest {
                 .setState(user.getState())
                 .setCity(user.getCity())
                 .submitForm()
-                .checkSummaryForm(user)
-                .closeSummaryForm();
+                .checkSummaryForm(user);
     }
 }
