@@ -5,12 +5,14 @@ import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Attachment;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.Selenide.sessionId;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 @Slf4j(topic = "AllureAttachmentHelper")
@@ -18,7 +20,7 @@ public class AllureAttachmentHelper {
 
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] screenshotAs(String attachName) {
-        return Selenide.screenshot(OutputType.BYTES);
+        return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
     @Attachment(value = "Page source", type = "text/plain")
