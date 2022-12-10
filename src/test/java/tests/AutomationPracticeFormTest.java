@@ -11,7 +11,7 @@ import static data.Users.daniil_kuznetsov;
 import static data.Users.random_user;
 import static pages.StudentRegistrationFormPage.openRegistrationForm;
 
-public class AutomationPracticeFormTest extends GeneralFrontTest {
+public class AutomationPracticeFormTest extends BaseTest {
 
     static Stream<User> argsProviderFactory() {
         return Stream.of(daniil_kuznetsov, random_user);

@@ -3,6 +3,7 @@ package pages;
 import data.Hobby;
 import data.Subject;
 import data.models.User;
+import io.qameta.allure.Step;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -17,6 +18,7 @@ public class SummaryFormPage {
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
     }
 
+    @Step("Убедиться, что форма заполнена верно")
     public SummaryFormPage checkSummaryForm(User user) {
         $x("//td[text()='Student Name']/following-sibling::td")
                 .shouldHave(text(user.getFirstName()), text(user.getLastName()));
@@ -46,6 +48,7 @@ public class SummaryFormPage {
         return this;
     }
 
+    @Step("Закрыть форму")
     public StudentRegistrationFormPage closeSummaryForm() {
         $("#closeLargeModal").click();
         return new StudentRegistrationFormPage();

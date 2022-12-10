@@ -1,14 +1,17 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static utils.AllureAttachmentHelper.*;
 
-public class GeneralFrontTest {
+public class BaseTest {
     @BeforeAll
     public static void setUp() {
         Configuration.pageLoadTimeout = 10000;
@@ -24,10 +27,17 @@ public class GeneralFrontTest {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         Configuration.browserCapabilities = capabilities;
+
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @AfterEach
     public void tearDown() {
+        screenshotAs("Last screenshot");
+        pageSource();
+        browserConsoleLogs();
+        attachHtml("HTML");
+//        addVideo();
         closeWebDriver();
     }
 
