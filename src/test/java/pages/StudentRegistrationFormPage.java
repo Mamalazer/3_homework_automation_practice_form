@@ -21,6 +21,8 @@ public class StudentRegistrationFormPage {
     @Step("Открыть страницу регистрационной формы студента")
     public static StudentRegistrationFormPage openRegistrationForm() {
         open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         return new StudentRegistrationFormPage();
     }
 

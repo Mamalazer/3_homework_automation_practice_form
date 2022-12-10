@@ -20,12 +20,15 @@ public class BaseTest {
         Configuration.browserSize = "1920x1080";
         Configuration.headless = false;
         Configuration.baseUrl = "https://demoqa.com";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-extensions");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
 
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -37,7 +40,7 @@ public class BaseTest {
         pageSource();
         browserConsoleLogs();
         attachHtml("HTML");
-//        addVideo();
+        addVideo();
         closeWebDriver();
     }
 
