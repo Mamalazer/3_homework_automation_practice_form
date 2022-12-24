@@ -29,6 +29,9 @@ public class BaseTest {
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
+        String[] browserSettings = System.getProperty("browser", "chrome 100").split("\\s+");
+        capabilities.setBrowserName(browserSettings[0]);
+        capabilities.setVersion(browserSettings[1]);
         Configuration.browserCapabilities = capabilities;
 
         SelenideLogger.addListener("allure", new AllureSelenide());
