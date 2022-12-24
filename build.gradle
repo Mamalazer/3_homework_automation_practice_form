@@ -9,7 +9,7 @@ version '1.0-SNAPSHOT'
 ext {
     allureVersion = '2.20.0'
     junitVersion = '5.9.0'
-    selenideVersion = '6.10.1'
+    selenideVersion = '6.10.3'
 }
 
 allure {
