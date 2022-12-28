@@ -12,6 +12,8 @@
 *.log.*
 
 # Package Files #
+*.jar
+!allure-notification*.jar
 *.war
 *.nar
 *.ear
