@@ -50,7 +50,8 @@ dependencies {
             "com.codeborne:selenide:${selenideVersion}",
             "com.codeborne:selenide-full-screenshot:${selenideVersion}",
             "com.github.javafaker:javafaker:1.0.2",
-            "io.qameta.allure:allure-selenide:${allureVersion}"
+            "io.qameta.allure:allure-selenide:${allureVersion}",
+            "org.aeonbits.owner:owner:1.0.12"
     )
 
     testRuntimeOnly(
